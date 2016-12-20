@@ -32,23 +32,51 @@ d3.json('./data.json', function(err, data) {
 	});
 	
 	//TODO date hardcoded for domain
-	console.log(new Date(2016,0,1));
+    data[0].values.sort(function(a, b){
+        return (a.date - b.date);
+    });
+
+    let minDate = data[0].values[0].date;
+    let maxDate = data[0].values[data[0].values.length - 1].date;
+
+    console.log(minDate, 'datemin');
+    console.log(maxDate, 'datemax');
 	
 	let xScale = d3.scaleTime()
-		.domain([new Date(2016,0,1), new Date(2016,0,2)])
+		.domain([minDate, maxDate])
 		.range([0, width]);
-	
+
+	let xAxis = d3.axisBottom(xScale)
+		.ticks(24)
+		.tickSizeInner(-height);
+
+
 	svg
 		.append('g')
 			.attr('transform', 'translate(0, ' + height + ')')
-		.call(d3.axisBottom(xScale).ticks(24));
+		.call(xAxis);
 	
 	let yScale = d3.scaleLinear()
 		.domain([0,4])
 		.range ([height, 0]);
 	
 	let yAxis = d3.axisLeft(yScale)
-		.ticks(4);
+		.ticks(4)
+        .tickFormat(function (d) {
+        	if (d===1)
+        		return 'logon';
+
+            if (d===2)
+                return 'driving';
+
+            if (d===3)
+                return 'rest';
+
+            if (d===4)
+                return 'off';
+
+            return 'unknown'
+        });
 	
 	svg
 		.append('g')
@@ -58,13 +86,14 @@ d3.json('./data.json', function(err, data) {
 		.x(function (d) {
 			console.log(d, "date");
 			return xScale(d.date);
-			
 		})
-		.y(function(d){
+       	.y(function(d){
 			console.log(d, "status");
 			return yScale(d.status);
-		});
-	
+		})
+		.curve(d3.curveStepAfter);
+
+    //line.interpolate('step-after');
 	
 	svg
 		.selectAll('.line')
