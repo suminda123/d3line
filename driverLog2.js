@@ -1,9 +1,9 @@
 /**
  * Created by earl.suminda on 20/12/2016.
  */
-let margin = {top:10, right: 20, bottom: 100, left: 40};
+let margin = {top:30, right: 20, bottom: 100, left: 150};
 let width = 1200 - margin.left - margin.right;
-let height = 640 - margin.top - margin.bottom;
+let height = 240 - margin.top - margin.bottom;
 
 let fullWidth = 1200 + margin.left + margin.right;
 let fullHeight = 240 + margin.top + margin.bottom;
@@ -48,34 +48,72 @@ d3.json('./data.json', function(err, data) {
 
 	let xAxis = d3.axisBottom(xScale)
 		.ticks(24)
-		.tickSizeInner(-height);
-
+		.tickArguments([d3.timeMinute.every(15)])
+		.tickFormat(function (d) {
+			
+			if(d.getMinutes()>0)
+				return '';
+			
+			  let lbl = d3.timeFormat("%I%p")(d);
+				if(lbl==='12AM' || lbl==='12PM')
+					return lbl;
+			
+			return d3.timeFormat("%I")(d);
+		})
+		.tickSizeInner(-height)
+		.tickPadding(10);
+	
 
 	svg
 		.append('g')
+			.attr("class", "xaxis1")
 			.attr('transform', 'translate(0, ' + height + ')')
 		.call(xAxis);
 	
+	var xAxis2 = d3.axisBottom(xScale)
+		.ticks(24)
+		.tickArguments([d3.timeMinute.every(15)])
+		.tickFormat(function (d) {
+			
+			if(d.getMinutes()>0)
+				return '';
+			
+			let lbl = d3.timeFormat("%I%p")(d);
+			if(lbl==='12AM' || lbl==='12PM')
+				return lbl;
+			
+			return d3.timeFormat("%I")(d);
+		})
+		.tickSizeInner(10)
+		.tickSizeOuter(20)
+		.tickPadding(-25);
+	
+	svg
+		.append('g')
+		.attr("class", "xaxis2")
+		.attr('transform', 'translate(0, 0)')
+		.call(xAxis2);
+	
 	let yScale = d3.scaleLinear()
-		.domain([0,4])
+		.domain([0,5])
 		.range ([height, 0]);
 	
 	let yAxis = d3.axisLeft(yScale)
 		.ticks(4)
         .tickFormat(function (d) {
         	if (d===1)
-        		return 'logon';
+        		return 'ON DUTY';
 
             if (d===2)
-                return 'driving';
+                return 'DRIVING';
 
             if (d===3)
-                return 'rest';
+                return 'SLEEPER BERTH';
 
             if (d===4)
-                return 'off';
+                return 'OFF DUTY';
 
-            return 'unknown'
+            return ''
         });
 	
 	svg
@@ -84,11 +122,9 @@ d3.json('./data.json', function(err, data) {
 	
 	let line = d3.line()
 		.x(function (d) {
-			console.log(d, "date");
 			return xScale(d.date);
 		})
-       	.y(function(d){
-			console.log(d, "status");
+		.y(function(d){
 			return yScale(d.status);
 		})
 		.curve(d3.curveStepAfter);
@@ -102,19 +138,50 @@ d3.json('./data.json', function(err, data) {
 		.append('path')
 		.attr('class', 'line')
 		.attr('d', function(d) {
-			console.log(d.values);
-				return line(d.values);
+					return line(d.values);
 		})
 		.style('stroke', function(d,i) {
-			console.log(i, 'index');
 			return ['#FF9900'][i];
 		})
 		.style('stroke-width', 2)
 		.style('fill', 'none');
 	
 	
+	//change x axis tick line
+	d3.selectAll("g.xaxis1 g.tick line[x1]")
+		.attr("x2", function(d){
+			//d for the tick line is the value
+			//of that tick
+			console.log(d.getMinutes(), 'min');
+			if(d.getMinutes()===30) {
+				d3.select(this).attr("y2", "-15");
+				return;
+			}
+			
+			if(d.getMinutes()>0)
+				d3.select(this).attr("y2","-5");
+			
+		});
+	
+	d3.selectAll("g.xaxis2 g.tick line[x1]")
+		.attr("x2", function(d){
+			//d for the tick line is the value
+			//of that tick
+			console.log(d.getMinutes(), 'min');
+			if(d.getMinutes()===30) {
+				d3.select(this).attr("y2", "15");
+				return;
+			}
+			
+			if(d.getMinutes()>0)
+				d3.select(this).attr("y2","5");
+			
+		});
+	
 });
 
+
+//other functions
 function responsivefy(svg) {
 	// get container + svg aspect ratio
 	var container = d3.select(svg.node().parentNode),
