@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
-        .line {
-            fill: none;
+        g.xaxis1 g.tick line, g.xaxis2 g.tick line {
             stroke: steelblue;
-            stroke-width: 1.5px;
+            stroke-width: 1.2px;
+        }
+
+        g.yaxis g.tick line {
+            stroke: #777;
+            stroke-dasharray: 2,2;
         }
     </style>
     <script src="https://d3js.org/d3.v4.js"></script>

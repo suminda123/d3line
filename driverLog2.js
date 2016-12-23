@@ -31,7 +31,6 @@ d3.json('./data.json', function(err, data) {
 		});
 	});
 	
-	//TODO date hardcoded for domain
     data[0].values.sort(function(a, b){
         return (a.date - b.date);
     });
@@ -60,7 +59,6 @@ d3.json('./data.json', function(err, data) {
 			
 			return d3.timeFormat("%I")(d);
 		})
-		.tickSizeInner(-height)
 		.tickPadding(10);
 	
 
@@ -99,6 +97,7 @@ d3.json('./data.json', function(err, data) {
 		.range ([height, 0]);
 	
 	let yAxis = d3.axisLeft(yScale)
+		.tickSize(-width)
 		.ticks(4)
         .tickFormat(function (d) {
         	if (d===1)
@@ -118,6 +117,7 @@ d3.json('./data.json', function(err, data) {
 	
 	svg
 		.append('g')
+		.attr("class", "yaxis")
 		.call(yAxis);
 	
 	let line = d3.line()
@@ -153,7 +153,7 @@ d3.json('./data.json', function(err, data) {
 			//d for the tick line is the value
 			//of that tick
 			console.log(d.getMinutes(), 'min');
-			if(d.getMinutes()===30) {
+			if(d.getMinutes()===30 ||d.getMinutes()===0) {
 				d3.select(this).attr("y2", "-15");
 				return;
 			}
