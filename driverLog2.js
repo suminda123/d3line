@@ -1,14 +1,14 @@
 /**
  * Created by earl.suminda on 20/12/2016.
  */
-let margin = {top:30, right: 20, bottom: 100, left: 150};
-let width = 1200 - margin.left - margin.right;
-let height = 240 - margin.top - margin.bottom;
+var margin = {top:30, right: 20, bottom: 100, left: 150};
+var width = 1200 - margin.left - margin.right;
+var height = 240 - margin.top - margin.bottom;
 
-let fullWidth = 1200 + margin.left + margin.right;
-let fullHeight = 240 + margin.top + margin.bottom;
+var fullWidth = 1200 + margin.left + margin.right;
+var fullHeight = 240 + margin.top + margin.bottom;
 
-let svg = d3.select('.chart')
+var svg = d3.select('.chart')
 	.append('svg')
 	.attr('width', width + margin.left + margin.right)
 	.attr('height', height + margin.top + margin.bottom)
@@ -24,28 +24,36 @@ d3.json('./data.json', function(err, data) {
 		return;
 	}
 	
-	data.forEach(c => {
-		c.values.forEach(d =>{
-			d.date =  new Date(d.date);
-			d.status = +d.status;
-		});
-	});
+	//ie doesn't support array forEach so use basic for loop
+	for (var i = 0; data.length > i ; i++){
+		for (var j = 0; data[i].values.length > j ; j++){
+					data[i].values[j].date =  new Date(data[i].values[j].date);
+					data[i].values[j].status = + data[i].values[j].status;
+				}
+	}
+	
+	//data.forEach(c => {
+	//	c.values.forEach(d =>{
+	//		d.date =  new Date(d.date);
+	//		d.status = +d.status;
+	//	});
+	//});
 	
     data[0].values.sort(function(a, b){
         return (a.date - b.date);
     });
 
-    let minDate = data[0].values[0].date;
-    let maxDate = data[0].values[data[0].values.length - 1].date;
+    var minDate = data[0].values[0].date;
+    var maxDate = data[0].values[data[0].values.length - 1].date;
 
     console.log(minDate, 'datemin');
     console.log(maxDate, 'datemax');
 	
-	let xScale = d3.scaleTime()
+	var xScale = d3.scaleTime()
 		.domain([minDate, maxDate])
 		.range([0, width]);
 
-	let xAxis = d3.axisBottom(xScale)
+	var xAxis = d3.axisBottom(xScale)
 		.ticks(24)
 		.tickArguments([d3.timeMinute.every(15)])
 		.tickFormat(function (d) {
@@ -53,7 +61,7 @@ d3.json('./data.json', function(err, data) {
 			if(d.getMinutes()>0)
 				return '';
 			
-			  let lbl = d3.timeFormat("%I%p")(d);
+			  var lbl = d3.timeFormat("%I%p")(d);
 				if(lbl==='12AM' || lbl==='12PM')
 					return lbl;
 			
@@ -76,7 +84,7 @@ d3.json('./data.json', function(err, data) {
 			if(d.getMinutes()>0)
 				return '';
 			
-			let lbl = d3.timeFormat("%I%p")(d);
+			var lbl = d3.timeFormat("%I%p")(d);
 			if(lbl==='12AM' || lbl==='12PM')
 				return lbl;
 			
@@ -92,11 +100,11 @@ d3.json('./data.json', function(err, data) {
 		.attr('transform', 'translate(0, 0)')
 		.call(xAxis2);
 	
-	let yScale = d3.scaleLinear()
+	var yScale = d3.scaleLinear()
 		.domain([0,5])
 		.range ([height, 0]);
 	
-	let yAxis = d3.axisLeft(yScale)
+	var yAxis = d3.axisLeft(yScale)
 		.tickSize(-width)
 		.ticks(4)
         .tickFormat(function (d) {
@@ -120,7 +128,7 @@ d3.json('./data.json', function(err, data) {
 		.attr("class", "yaxis")
 		.call(yAxis);
 	
-	let line = d3.line()
+	var line = d3.line()
 		.x(function (d) {
 			return xScale(d.date);
 		})
@@ -152,8 +160,15 @@ d3.json('./data.json', function(err, data) {
 		.attr("x2", function(d){
 			//d for the tick line is the value
 			//of that tick
-			console.log(d.getMinutes(), 'min');
-			if(d.getMinutes()===30 ||d.getMinutes()===0) {
+			console.log(d.getMinutes(), 'min1');
+			
+				
+			if(d.getMinutes()===30) {
+				d3.select(this).attr("y2", "-10");
+				return;
+			}
+				
+			if(d.getMinutes()===0) {
 				d3.select(this).attr("y2", "-15");
 				return;
 			}
@@ -167,8 +182,14 @@ d3.json('./data.json', function(err, data) {
 		.attr("x2", function(d){
 			//d for the tick line is the value
 			//of that tick
-			console.log(d.getMinutes(), 'min');
+			console.log(d.getMinutes(), 'min2');
+			
 			if(d.getMinutes()===30) {
+				d3.select(this).attr("y2", "10");
+				return;
+			}
+			
+			if(d.getMinutes()===0) {
 				d3.select(this).attr("y2", "15");
 				return;
 			}
