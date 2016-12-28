@@ -8,6 +8,25 @@ var height = 240 - margin.top - margin.bottom;
 var fullWidth = 1200 + margin.left + margin.right;
 var fullHeight = 240 + margin.top + margin.bottom;
 
+//drag
+
+var dragWidth = 300,
+	dragHeight = height,
+	dragbarw = 20,
+	fillColor = "#429bd6",
+	xScale;
+
+var drag = d3.drag()
+		.on("drag", dragmove);
+
+var dragright = d3.drag()
+	.on("drag", rdragresize);
+
+var dragleft = d3.drag()
+	.on("drag", ldragresize);
+
+var dragrect, dragbarleft, dragbarright;
+
 //add tooltip
 var tooltip = d3.select("body")
 							.append("div")
@@ -63,7 +82,7 @@ d3.json('./data.json', function(err, data) {
     console.log(minDate, 'datemin');
     console.log(maxDate, 'datemax');
 	
-	var xScale = d3.scaleTime()
+	xScale = d3.scaleTime()
 		.domain([minDate, maxDate])
 		.range([0, width]);
 
@@ -172,43 +191,40 @@ d3.json('./data.json', function(err, data) {
 		.style('fill', 'none');
 	
 	
-	// append the circle at the intersection
-	focus.append("circle")                                
-		.attr("class", "y")                               
-		.style("fill", "none")                            
-		.style("stroke", "blue")                          
-		.attr("r", 4);                                    
+	var newg = svg.append("g")
+		.data([{x: dragWidth / 2, y: 0}]);
 	
-	// append the rectangle to capture mouse              
-	svg.append("rect")                                    
-		.attr("width", width)                             
-		.attr("height", height)                           
-		.style("fill", "none")                            
-		.style("pointer-events", "all")                   
-		.on("mouseover", function() { focus.style("display", null); })
-		.on("mouseout", function() { focus.style("display", "none"); })
-		.on("mousemove", mousemove);                      
+	dragrect = newg.append("rect")
+		.attr("id", "active")
+		.attr("x", function(d) { return d.x; })
+		.attr("y", function(d) { return d.y; })
+		.attr("height", dragHeight)
+		.attr("width", dragWidth)
+		.attr("fill-opacity", .5)
+		.attr("cursor", "move")
+		.call(drag);
 	
-	function mousemove() {                                
-		var data0 = data[0].values;
-		
-		var x0 = xScale.invert(d3.mouse(this)[0]),             
-			i = bisectDate(data0, x0, 1),                  
-			d0 = data0[i - 1],                             
-			d1 = data0[i],                                 
-			d = x0 - d0.date > d1.date - x0 ? d1 : d0;    
-		
-		console.log(d3.mouse(this)[0], "d3 mouse");
-		
-		console.log(yScale.invert(d3.mouse(this)[0]), "d3 mouse y");
-		
-		console.log({"x0" :x0, "i" : i, "d0": d0,"d1": d1, "d": d});
-		
-		focus.select("circle.y")                          
-			.attr("transform",                            
-				"translate(" + xScale(d.date) + "," +        
-				yScale(d.status) + ")");       
-	}                                                     
+	dragbarleft = newg.append("rect")
+		.attr("x", function(d) { return d.x - (dragbarw/2); })
+		.attr("y", function(d) { return d.y + (dragbarw/2); })
+		.attr("height", dragHeight - dragbarw)
+		.attr("id", "dragleft")
+		.attr("width", dragbarw)
+		.attr("fill", fillColor)
+		.attr("fill-opacity", .5)
+		.attr("cursor", "ew-resize")
+		.call(dragleft);
+	
+	dragbarright = newg.append("rect")
+		.attr("x", function(d) { return d.x + dragWidth - (dragbarw/2); })
+		.attr("y", function(d) { return d.y + (dragbarw/2); })
+		.attr("id", "dragright")
+		.attr("height", dragHeight - dragbarw)
+		.attr("width", dragbarw)
+		.attr("fill", fillColor)
+		.attr("fill-opacity", .5)
+		.attr("cursor", "ew-resize")
+		.call(dragright);
 	
 	
 	//change x axis tick line
@@ -285,3 +301,54 @@ function responsivefy(svg) {
 		svg.attr("height", Math.round(targetWidth / aspect));
 	}
 }
+	//other drag functions
+
+
+
+	function dragmove(d) {
+			dragrect
+				.attr("x", d.x = Math.max(0, Math.min(width - dragWidth, d3.event.x)))
+			dragbarleft
+				.attr("x", function(d) { return d.x - (dragbarw/2); })
+			dragbarright
+				.attr("x", function(d) { return d.x + dragWidth - (dragbarw/2); })
+		
+		 console.log(xScale.invert(dragrect.attr("x")), 'xAxis Val1');
+		 console.log(xScale.invert(d.x + dragWidth ), 'xAxis Val2')
+				
+	}
+	
+	function ldragresize(d) {
+	
+			var oldx = d.x;
+			//Max x on the right is x + dragWidth - dragbarw
+			//Max x on the left is 0 - (dragbarw/2)
+			d.x = Math.max(0, Math.min(d.x + dragWidth - (dragbarw / 2), d3.event.x));
+			dragWidth = dragWidth + (oldx - d.x);
+			dragbarleft
+				.attr("x", function(d) { return d.x - (dragbarw / 2); });
+			
+			dragrect
+				.attr("x", function(d) { return d.x; })
+				.attr("width", dragWidth);
+		
+	}
+	
+	function rdragresize(d) {
+			//Max x on the left is x - dragWidth
+			//Max x on the right is width of screen + (dragbarw/2)
+			var dragx = Math.max(d.x + (dragbarw/2), Math.min(width, d.x + dragWidth + d3.event.dx));
+			
+			//recalculate width
+		dragWidth = dragx - d.x;
+			
+			//move the right drag handle
+			dragbarright
+				.attr("x", function(d) { return dragx - (dragbarw/2) });
+			
+			//resize the drag rectangle
+			//as we are only resizing from the right, the x coordinate does not need to change
+			dragrect
+				.attr("width", dragWidth);
+		
+	}
