@@ -3,7 +3,7 @@
  */
 var margin = {top:30, right: 20, bottom: 100, left: 150};
 var width = 1200 - margin.left - margin.right;
-var height = 240 - margin.top - margin.bottom;
+var height = 300 - margin.top - margin.bottom;
 
 var minDate;
 //drag
@@ -69,6 +69,7 @@ else{
 	});
 }
 
+//button events
 $("#btnEdit").on("click", function () {
 		$(".btngroup button").removeClass("hide");
 	  $(this).addClass("hide");
@@ -81,10 +82,22 @@ $("#btnCancel").on("click", function () {
 	$(this).addClass("hide");
 	$("#btnConfirm").addClass("hide");
 	$("#driverStatusEdit").addClass("hide");
-	
+
 	$(".gEdit").remove();
 });
 
+$(".btnStatus").on("click", function (e) {
+	e.preventDefault();
+
+	var txtFromDate =  $("#inputFrom").val();
+    var txtToDate =  $("#inputTo").val();
+
+	var d1 = d3.timeFormat("%Y/%m/%d")(minDate);
+	var dFrom = new Date(d1 + " " + txtFromDate );
+
+    console.log(xScale(dFrom));
+	console.log(this.dataset.status);
+});
 
 function drawLineGraph(data){
 	//ie doesn't support array forEach so use basic for loop
@@ -117,6 +130,7 @@ function drawLineGraph(data){
 		.range([0, width]);
 	
 	var xAxis = d3.axisBottom(xScale)
+		.tickSize(-height)
 		.ticks(24)
 		.tickArguments([d3.timeMinute.every(15)])
 		.tickFormat(function (d) {
@@ -217,28 +231,25 @@ function drawLineGraph(data){
 	
 	
 	//change x axis tick line
-	d3.selectAll("g.xaxis1 g.tick line[x1]")
-		.attr("x2", function(d){
-			//d for the tick line is the value
-			//of that tick
-			//console.log(d.getMinutes(), 'min1');
-			
-			
-			if(d.getMinutes()===30) {
-				d3.select(this).attr("y2", "-10");
-				return;
-			}
-			
-			if(d.getMinutes()===0) {
-				d3.select(this).attr("y2", "-15");
-				return;
-			}
-			
-			if(d.getMinutes()>0)
-				d3.select(this).attr("y2","-5");
-			
-		});
-	
+
+    d3.selectAll("g.xaxis1 g.tick line[x1]")
+        .attr("x2", function(d){
+            //d for the tick line is the value
+            //of that tick
+            //console.log(d.getMinutes(), 'min1');
+
+
+            if(d.getMinutes()===30) {
+                d3.select(this).attr("y2", "-10");
+                return;
+            }
+
+
+            if(d.getMinutes()>0)
+                d3.select(this).attr("y2","-5");
+
+        });
+
 	d3.selectAll("g.xaxis2 g.tick line[x1]")
 		.attr("x2", function(d){
 			//d for the tick line is the value
@@ -250,11 +261,7 @@ function drawLineGraph(data){
 				return;
 			}
 			
-			if(d.getMinutes()===0) {
-				d3.select(this).attr("y2", "15");
-				return;
-			}
-			
+
 			if(d.getMinutes()>0)
 				d3.select(this).attr("y2","5");
 			
