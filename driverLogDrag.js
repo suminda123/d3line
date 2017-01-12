@@ -436,8 +436,8 @@ function loadStatusGrid(){
 				statusText = getStatusText(previousItem.status);
 			}
 			previousItem = d;
-			var
-			return "<td>" + statusText + "</td><td>" + fromTime + "</td><td>" + timeFormat(d.date) + "</td><td>" + d.status + "</td>";
+
+			return "<td>" + statusText + "</td><td>" + fromTime + "</td><td>" + timeFormat(d.date) + "</td><td></td>";
 		});
 }
 
