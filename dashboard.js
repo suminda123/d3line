@@ -200,8 +200,8 @@
         {Day:'Sunday',freq:{Sleeperberth:8, onDuty:5, Driving:9}}
         ,{Day:'Monday',freq:{Sleeperberth:4, onDuty:6, Driving:4}}
         ,{Day:'Tuesday',freq:{Sleeperberth:9, onDuty:3, Driving:6}}
-        ,{Day:'Wednesday',freq:{Sleeperberth:6, onDuty:5, Driving:7}}
-        ,{Day:'Thursday',freq:{Sleeperberth:6, onDuty:4, Driving:8}}
+        ,{Day:'Wednesday',freq:{Sleeperberth:4, onDuty:5, Driving:7}}
+        ,{Day:'Thursday',freq:{Sleeperberth:6, onDuty:4, Driving:11}}
         ,{Day:'Friday',freq:{Sleeperberth:3, onDuty:1, Driving:10}}
         ,{Day:'Saturday',freq:{Sleeperberth:4, onDuty:2, Driving:12}}
     ];
