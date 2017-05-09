@@ -1,17 +1,20 @@
 /**
  * Created by earl.suminda on 20/12/2016.
  */
-var margin = {top:30, right: 20, bottom: 100, left: 150};
+var margin = {top:30, right: 20, bottom: 40, left: 150};
 var width = 1200 - margin.left - margin.right;
-var height = 300 - margin.top - margin.bottom;
+var height = 250 - margin.top - margin.bottom;
 
 var minDate;
 //drag
-var dragWidth = 300,
+var dragWidth = 180,
 	dragHeight = height,
 	dragbarw = 20,
 	fillColor = "#429bd6",
 	xScale;
+
+var inputFrom = $("#inputFrom");
+var inputTo =  $("#inputTo");
 
 var drag = d3.drag()
 		.on("drag", dragmove);
@@ -71,16 +74,13 @@ else{
 
 //button events
 $("#btnEdit").on("click", function () {
-		$(".btngroup button").removeClass("hide");
 	  $(this).addClass("hide");
 	
 	  enableEdit();
 });
 
 $("#btnCancel").on("click", function () {
-	$(".btngroup button").removeClass("hide");
-	$(this).addClass("hide");
-	$("#btnConfirm").addClass("hide");
+	$("#btnEdit").removeClass("hide");
 	$("#driverStatusEdit").addClass("hide");
 
 	$(".gEdit").remove();
@@ -88,16 +88,17 @@ $("#btnCancel").on("click", function () {
 
 $(".btnStatus").on("click", function (e) {
 	e.preventDefault();
-
-	var txtFromDate =  $("#inputFrom").val();
-    var txtToDate =  $("#inputTo").val();
-
-	var d1 = d3.timeFormat("%Y/%m/%d")(minDate);
-	var dFrom = new Date(d1 + " " + txtFromDate );
-
-    console.log(xScale(dFrom));
-	console.log(this.dataset.status);
+	$(this).parent().find(".btnStatusSelected").removeClass("btnStatusSelected");
+	
+	$(this).addClass("btnStatusSelected");
+	
+  $("#btnConfirm").focus();
+ 	console.log(this.dataset.status);
 });
+
+inputFrom.on("blur", timeInputBlur);
+
+inputTo.on("blur", timeInputBlur);
 
 function drawLineGraph(data){
 	//ie doesn't support array forEach so use basic for loop
@@ -184,21 +185,7 @@ function drawLineGraph(data){
 	var yAxis = d3.axisLeft(yScale)
 		.tickSize(-width)
 		.ticks(4)
-		.tickFormat(function (d) {
-			if (d===1)
-				return 'ON DUTY';
-			
-			if (d===2)
-				return 'DRIVING';
-			
-			if (d===3)
-				return 'SLEEPER BERTH';
-			
-			if (d===4)
-				return 'OFF DUTY';
-			
-			return ''
-		});
+		.tickFormat(getStatusText);
 	
 	svg
 		.append('g')
@@ -266,12 +253,17 @@ function drawLineGraph(data){
 				d3.select(this).attr("y2","5");
 			
 		});
+	
+  loadStatusGrid();
 }
 
-function enableEdit(){
+function enableEdit(xPoint){
+	
+	xPoint = xPoint || dragWidth/2;
+	
 	var newg = svg.append("g")
 		.attr("class", "gEdit")
-		.data([{x: dragWidth / 2, y: 0}]);
+		.data([{x: xPoint, y: 0}]);
 	
 	dragrect = newg.append("rect")
 		.attr("id", "active")
@@ -336,7 +328,7 @@ function responsivefy(svg) {
 		svg.attr("height", Math.round(targetWidth / aspect));
 	}
 }
-//other drag functions
+//other functions
 function timeFormat(d){
   return d3.timeFormat("%I:%M %p")(d);
 }
@@ -346,9 +338,11 @@ function displayDate(d){
 }
 
 function dragInputSetTime(x){
-  
+
+	var dWith = parseFloat(dragrect.attr("width"));
+	
   $("#inputFrom").val(timeFormat(xScale.invert(x)));
-  $("#inputTo").val(timeFormat(xScale.invert(x + dragWidth)));
+  $("#inputTo").val(timeFormat(xScale.invert(parseFloat(x) + dWith)));
 }
 
 function dragmove(d) {
@@ -385,18 +379,82 @@ function ldragresize(d) {
 	dragInputSetTime(d.x);
 }
 
-function updateData(){
+function timeInputBlur() {
+	var txtFromDate =  inputFrom.val();
+	var txtToDate = inputTo.val();
+	
+	var d1 = d3.timeFormat("%Y/%m/%d")(minDate);
+	var dFrom = new Date(d1 + " " + txtFromDate );
+	var dTo = new Date(d1 + " " + txtToDate );
+	
+	//invalid time range for the status
+	if (dFrom > dTo || dFrom.toString() === 'Invalid Date' || dTo.toString() === 'Invalid Date') {
+		inputFrom.closest(".form-group").addClass("has-error");
+		return;
+	}
+	
+	inputFrom.closest(".form-group").removeClass("has-error");
+	
+	dragWidth = (xScale(dTo) - xScale(dFrom));
+	
+	$(".gEdit").remove();
+		enableEdit(xScale(dFrom));
+}
+
+function getEldPendingData(){
 	var data1 = driverLogData.filter(function (item) {
 		 if (item.ticker.toLowerCase()==="eld-pending"){
 		 	return item
 		 }
-	})
+	});
 	
-	data1 = data1 || driverLogData;
+	if (!data1 || data1.length===0){
+		data1 = driverLogData;
+	}
 	
-	console.log(data1, "data1");
+	return data1
 	//if no items between start and end insert new
+}
+
+function loadStatusGrid(){
+	var previousItem ;
+	d3.select(".statusgridbody")
+		.selectAll("tbody")
+		.data(getEldPendingData()[0].values)
+		.enter().append("tr")
+		.html(function(d, i) {
+			console.log(d,i);
+			var fromTime;
+			var statusText;
+			if (i===0) {
+				previousItem = d;
+				return "";
+				//fromTime = "12:00 AM";
+				//statusText = getStatusText(d.status);
+			}else{
+				fromTime = timeFormat(previousItem.date);
+				statusText = getStatusText(previousItem.status);
+			}
+			previousItem = d;
+
+			return "<td>" + statusText + "</td><td>" + fromTime + "</td><td>" + timeFormat(d.date) + "</td><td></td>";
+		});
+}
+
+function getStatusText(d) {
+	if (d===1)
+		return 'ON DUTY';
 	
+	if (d===2)
+		return 'DRIVING';
+	
+	if (d===3)
+		return 'SLEEPER BERTH';
+	
+	if (d===4)
+		return 'OFF DUTY';
+	
+	return ''
 }
 
 function rdragresize(d) {

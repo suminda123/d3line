@@ -32,17 +32,28 @@
       <file leaf-file-name="driverLogDrag.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/driverLogDrag.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="300">
               <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+=======
+            <state relative-caret-position="2397">
+              <caret line="146" column="6" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="6" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
               <folding>
+                <element signature="e#1683#1788#0" expanded="false" />
                 <element signature="n#!!block;n#enableEdit#0" expanded="false" />
                 <element signature="n#!!block;n#responsivefy#0" expanded="false" />
+                <element signature="n#!!block;n#dragmove#0" expanded="false" />
+                <element signature="n#!!block;n#ldragresize#0" expanded="false" />
+                <element signature="n#!!block;n#timeInputBlur#0" expanded="false" />
+                <element signature="n#!!block;n#getStatusText#0" expanded="false" />
                 <element signature="n#!!block;n#rdragresize#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="simple-graph.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simple-graph.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -100,6 +111,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="567">
               <caret line="111" column="6" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="40" />
+=======
+      <file leaf-file-name="driverLogDrag.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/driverLogDrag.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-525">
+              <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
               <folding />
             </state>
           </provider>
@@ -108,8 +126,13 @@
       <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data.json">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="50">
               <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="11" />
+=======
+            <state relative-caret-position="578">
+              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
               <folding />
             </state>
           </provider>
@@ -141,11 +164,11 @@
         <option value="$PROJECT_DIR$/driverLog.js" />
         <option value="$PROJECT_DIR$/temp" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/data.json" />
         <option value="$PROJECT_DIR$/driverLog.html" />
         <option value="$PROJECT_DIR$/backup.js" />
         <option value="$PROJECT_DIR$/driverLog2.js" />
         <option value="$PROJECT_DIR$/driverLogDrag.html" />
+        <option value="$PROJECT_DIR$/data.json" />
         <option value="$PROJECT_DIR$/driverLogDrag.js" />
         <option value="$PROJECT_DIR$/pieChart.html" />
         <option value="$PROJECT_DIR$/pieChart.js" />
@@ -161,10 +184,27 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="-11" />
     <option name="y" value="-11" />
     <option name="width" value="1934" />
     <option name="height" value="1042" />
+=======
+    <option name="x" value="1940" />
+    <option name="y" value="10" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -296,6 +336,7 @@
       <workItem from="1482220009282" duration="5368000" />
       <workItem from="1482267553381" duration="15331000" />
       <workItem from="1482454257064" duration="44631000" />
+<<<<<<< HEAD
       <workItem from="1482996631433" duration="5623000" />
       <workItem from="1486278010720" duration="599000" />
       <workItem from="1489135994826" duration="625000" />
@@ -303,10 +344,16 @@
       <workItem from="1491219890484" duration="1185000" />
       <workItem from="1493376295160" duration="136000" />
       <workItem from="1494320380882" duration="4653000" />
+=======
+      <workItem from="1482996631433" duration="5454000" />
+      <workItem from="1483041216089" duration="16451000" />
+      <workItem from="1483913166078" duration="1362000" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="98654000" />
   </component>
   <component name="ToolWindowManager">
@@ -314,21 +361,35 @@
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14820847" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+    <option name="totallyTimeSpent" value="108501000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1940" y="10" width="1936" height="1056" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14541623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18458198" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936978" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,18 +408,89 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/driverLogDrag.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="6817">
+          <caret line="401" column="1" selection-start-line="401" selection-start-column="1" selection-end-line="401" selection-end-column="1" />
           <folding>
+            <element signature="e#1683#1788#0" expanded="false" />
             <element signature="n#!!block;n#enableEdit#0" expanded="false" />
             <element signature="n#!!block;n#responsivefy#0" expanded="false" />
+            <element signature="n#!!block;n#dragmove#0" expanded="false" />
+            <element signature="n#!!block;n#ldragresize#0" expanded="false" />
+            <element signature="n#!!block;n#timeInputBlur#0" expanded="false" />
+            <element signature="n#!!block;n#getStatusText#0" expanded="false" />
+            <element signature="n#!!block;n#rdragresize#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driverLogDrag.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driverLogDrag.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1683#1788#0" expanded="false" />
+            <element signature="n#!!block;n#enableEdit#0" expanded="false" />
+            <element signature="n#!!block;n#responsivefy#0" expanded="false" />
+            <element signature="n#!!block;n#dragmove#0" expanded="false" />
+            <element signature="n#!!block;n#ldragresize#0" expanded="false" />
+            <element signature="n#!!block;n#timeInputBlur#0" expanded="false" />
+            <element signature="n#!!block;n#getStatusText#0" expanded="false" />
+            <element signature="n#!!block;n#rdragresize#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driverLogDrag.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="82" selection-start-line="71" selection-start-column="73" selection-end-line="71" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driverLogDrag.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1683#1788#0" expanded="false" />
+            <element signature="n#!!block;n#enableEdit#0" expanded="false" />
+            <element signature="n#!!block;n#responsivefy#0" expanded="false" />
+            <element signature="n#!!block;n#dragmove#0" expanded="false" />
+            <element signature="n#!!block;n#ldragresize#0" expanded="false" />
+            <element signature="n#!!block;n#timeInputBlur#0" expanded="false" />
+            <element signature="n#!!block;n#getStatusText#0" expanded="false" />
             <element signature="n#!!block;n#rdragresize#0" expanded="false" />
           </folding>
         </state>
@@ -479,7 +611,7 @@
     <entry file="file://$PROJECT_DIR$/driverLogDrag.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1100">
-          <caret line="44" column="31" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -487,7 +619,7 @@
     <entry file="file://$PROJECT_DIR$/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
-          <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="11" />
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -495,7 +627,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -503,21 +635,30 @@
     <entry file="file://$PROJECT_DIR$/driverLog.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
+<<<<<<< HEAD
           <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+=======
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/driverLog2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/driverLog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
-          <caret line="38" column="18" lean-forward="false" selection-start-line="36" selection-start-column="2" selection-end-line="38" selection-end-column="18" />
+          <caret line="38" column="18" selection-start-line="36" selection-start-column="2" selection-end-line="38" selection-end-column="18" />
           <folding>
             <element signature="e#0#49#0" expanded="false" />
           </folding>
@@ -527,14 +668,14 @@
     <entry file="file://$PROJECT_DIR$/temp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="7" />
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -542,14 +683,19 @@
     <entry file="file://$PROJECT_DIR$/simple-graph.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6443">
+<<<<<<< HEAD
           <caret line="379" column="2" lean-forward="false" selection-start-line="379" selection-start-column="2" selection-end-line="379" selection-end-column="2" />
+=======
+          <caret line="379" column="2" selection-start-line="379" selection-start-column="2" selection-end-line="379" selection-end-column="2" />
+          <folding />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -557,21 +703,30 @@
     <entry file="file://$PROJECT_DIR$/driverLog.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
+<<<<<<< HEAD
           <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+=======
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/driverLog2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/driverLog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
-          <caret line="68" column="20" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="20" />
+          <caret line="68" column="20" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="20" />
           <folding>
             <element signature="e#0#49#0" expanded="false" />
           </folding>
@@ -581,14 +736,14 @@
     <entry file="file://$PROJECT_DIR$/temp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
-          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="7" />
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -596,14 +751,19 @@
     <entry file="file://$PROJECT_DIR$/simple-graph.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9475">
+<<<<<<< HEAD
           <caret line="379" column="2" lean-forward="false" selection-start-line="379" selection-start-column="2" selection-end-line="379" selection-end-column="2" />
+=======
+          <caret line="379" column="2" selection-start-line="379" selection-start-column="2" selection-end-line="379" selection-end-column="2" />
+          <folding />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -611,21 +771,30 @@
     <entry file="file://$PROJECT_DIR$/driverLog.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
+<<<<<<< HEAD
           <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+=======
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/driverLog2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/driverLog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
-          <caret line="68" column="20" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="20" />
+          <caret line="68" column="20" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="20" />
           <folding>
             <element signature="e#0#49#0" expanded="false" />
           </folding>
@@ -635,14 +804,14 @@
     <entry file="file://$PROJECT_DIR$/temp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
-          <caret line="32" column="7" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="32" selection-end-column="4" />
+          <caret line="32" column="7" selection-start-line="15" selection-start-column="0" selection-end-line="32" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
-          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -650,28 +819,44 @@
     <entry file="file://$PROJECT_DIR$/simple-graph.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9475">
+<<<<<<< HEAD
           <caret line="379" column="2" lean-forward="false" selection-start-line="379" selection-start-column="2" selection-end-line="379" selection-end-column="2" />
+=======
+          <caret line="379" column="2" selection-start-line="379" selection-start-column="2" selection-end-line="379" selection-end-column="2" />
+          <folding />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/temp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/simple-graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6443">
+          <caret line="379" column="2" selection-start-line="379" selection-start-column="2" selection-end-line="379" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
     <entry file="file://$PROJECT_DIR$/driverLog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="793">
-          <caret line="73" column="2" lean-forward="false" selection-start-line="73" selection-start-column="2" selection-end-line="73" selection-end-column="2" />
+          <caret line="73" column="2" selection-start-line="73" selection-start-column="2" selection-end-line="73" selection-end-column="2" />
           <folding>
             <element signature="e#0#49#0" expanded="false" />
           </folding>
@@ -681,7 +866,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
-          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -689,26 +874,41 @@
     <entry file="file://$PROJECT_DIR$/driverLog.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
+<<<<<<< HEAD
           <caret line="42" column="7" lean-forward="false" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+=======
+          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
+<<<<<<< HEAD
           <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+=======
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/driverLog2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
+<<<<<<< HEAD
           <caret line="194" column="26" lean-forward="false" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="26" />
+=======
+          <caret line="194" column="26" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="26" />
+          <folding />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data.json">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="50">
           <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="11" />
           <folding />
@@ -755,12 +955,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="111" column="6" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="40" />
+=======
+        <state relative-caret-position="578">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashBoard.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="192">
           <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
           <folding />
@@ -773,7 +978,28 @@
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="e#6590#8390#0" expanded="false" />
+=======
+        <state relative-caret-position="2397">
+          <caret line="146" column="6" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="6" />
+          <folding>
+            <element signature="e#1683#1788#0" expanded="false" />
+            <element signature="n#!!block;n#enableEdit#0" expanded="false" />
+            <element signature="n#!!block;n#responsivefy#0" expanded="false" />
+            <element signature="n#!!block;n#dragmove#0" expanded="false" />
+            <element signature="n#!!block;n#ldragresize#0" expanded="false" />
+            <element signature="n#!!block;n#timeInputBlur#0" expanded="false" />
+            <element signature="n#!!block;n#getStatusText#0" expanded="false" />
+            <element signature="n#!!block;n#rdragresize#0" expanded="false" />
+>>>>>>> 1af985d5320f47f884eee54cdd0f10a9d2cdfe26
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driverLogDrag.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-525">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
